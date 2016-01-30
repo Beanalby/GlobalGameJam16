@@ -18,9 +18,6 @@ namespace GlobalGameJam16 {
                 rb.velocity = Vector2.zero;
             } else {
                 rb.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), moveSpeed * Input.GetAxis("Vertical"));
-                if (Input.GetButtonDown("Jump")) {
-                    Instantiate(PrayerPrefab);
-                }
             }
         }
     }
