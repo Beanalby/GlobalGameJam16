@@ -50,7 +50,10 @@ namespace GlobalGameJam16 {
             if (_instance != this) {
                 return;
             }
-            if (currentDay == endDay) {
+            if (currentDay == 1) {
+                // nothing to do on day 1
+                return;
+            } else if (currentDay == endDay) {
                 // don't spawn new stuff, just note things undone
                 numDirtFailed += dirtSpots.Count;
             } else {

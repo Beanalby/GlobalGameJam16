@@ -13,7 +13,8 @@ namespace GlobalGameJam16 {
         public bool SpecializedThing = false;
 
         public void Start() {
-            ClearUsableThing();
+            thing = null;
+            thingDesc.SetActive(false);
         }
 
         public void Update() {
@@ -36,9 +37,11 @@ namespace GlobalGameJam16 {
             thingDesc.SetActive(true);
         }
 
-        public void ClearUsableThing() {
-            thing = null;
-            thingDesc.SetActive(false);
+        public void ClearUsableThing(UsableThing newThing) {
+            if (thing == newThing) {
+                thing = null;
+                thingDesc.SetActive(false);
+            }
         }
 
         public void AddEquipment(GameObject newEq) {

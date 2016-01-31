@@ -15,7 +15,7 @@ namespace GlobalGameJam16 {
             ClearUsableThing();
         }
         public void ClearUsableThing() {
-            user.SendMessage("ClearUsableThing", SendMessageOptions.DontRequireReceiver);
+            user.SendMessage("ClearUsableThing", this, SendMessageOptions.DontRequireReceiver);
         }
     }
 }
