@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,9 +18,15 @@ namespace GlobalGameJam16 {
 
         public GameObject dirtPrefab;
 
-        private int numNewDirt = 3, numUncleanedDirt=0, numUnprayed=0;
+        private int endDay = 2, currentDay = 1;
+
+        private int numNewDirt = 3, numDirtFailed=0, numDirtSucceeded, numPrayFailed=0, numPraySucceeded=0;
         private Rect dirtRange = new Rect(-.5f, -2f, 12f, 2.5f);
         private HashSet<Vector3> dirtSpots;
+        public int NumDirtFailed { get { return numDirtFailed; } }
+        public int NumPrayFailed { get { return numPrayFailed; } }
+        public int NumDirtSucceeded { get { return numDirtSucceeded; } }
+        public int NumPraySucceeded { get { return numPraySucceeded; } }
 
         public void Awake() {
             if (_instance != null) {
@@ -35,14 +42,20 @@ namespace GlobalGameJam16 {
         public void Start() {
             SpawnNewDirt();
         }
+
         public void OnLevelWasLoaded(int level) {
             // gets called even if we're a duplicate that's going
             // to be destroyed, make sure we're the real one
             if (_instance != this) {
                 return;
             }
-            RestoreDirt();
-            SpawnNewDirt();
+            if (currentDay == endDay) {
+                // don't spawn new stuff, just note things undone
+                numDirtFailed += dirtSpots.Count;
+            } else {
+                RestoreDirt();
+                SpawnNewDirt();
+            }
         }
 
         public void AddDirt(Vector3 pos) {
@@ -50,6 +63,7 @@ namespace GlobalGameJam16 {
         }
         public void RemoveDirt(Vector3 pos) {
             dirtSpots.Remove(pos);
+            ++numDirtSucceeded;
         }
         private void SpawnDirt() {
             Vector3 pos = new Vector3(
@@ -69,13 +83,28 @@ namespace GlobalGameJam16 {
         }
         private void RestoreDirt() {
             foreach (Vector3 pos in dirtSpots) {
-                ++numUncleanedDirt;
+                ++numDirtFailed;
                 SpawnDirt(pos);
             }
         }
 
+        public void CleanedDirt() {
+            ++numDirtSucceeded;
+        }
+        public void PrayedScroll() {
+            ++numPraySucceeded;
+        }
         public void UnprayedScroll() {
-            ++numUnprayed;
+            ++numPrayFailed;
+        }
+
+        public void AdvanceDay() {
+            ++currentDay;
+            if (currentDay == endDay) {
+                SceneManager.LoadScene("EndDay");
+            } else {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 }

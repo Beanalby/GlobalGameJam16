@@ -18,7 +18,10 @@ namespace GlobalGameJam16 {
         }
 
         public void OnPrayerSuccess() {
-            wasPrayed = true;
+            if (wasPrayed == false) {
+                wasPrayed = true;
+                GameState.Instance.PrayedScroll();
+            }
         }
 
         public void OnApplicationQuit() {
