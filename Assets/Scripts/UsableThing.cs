@@ -4,6 +4,7 @@ using System.Collections;
 namespace GlobalGameJam16 {
     public class UsableThing: MonoBehaviour {
         public string description;
+        public GameObject requiredEquipment;
 
         private GameObject user;
         public void OnTriggerEnter2D(Collider2D other) {
