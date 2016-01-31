@@ -334,6 +334,7 @@ MonoBehaviour:
   input: {fileID: 11488146}
   goalLabel: {fileID: 11403838}
   goalText: Praise Tehlu
+  scroll: {fileID: 0}
 --- !u!114 &11437930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -601,10 +602,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22494888}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -188.8}
-  m_SizeDelta: {x: 360.6, y: 180.2}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 10, y: 12.199997}
+  m_SizeDelta: {x: -20.100006, y: -20.800003}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &22459186
 RectTransform:

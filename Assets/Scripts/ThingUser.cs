@@ -40,7 +40,6 @@ namespace GlobalGameJam16 {
                     }
                 }
             }
-            Debug.Log("+++ setting usable for " + newThing.name);
             thing = newThing;
             thingDescLabel.text = thing.description;
             thingDesc.SetActive(true);

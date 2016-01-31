@@ -20,7 +20,7 @@ namespace GlobalGameJam16 {
         }
         public void OnDestroy() {
             if (!isQuitting && !wasPolished) {
-                GameState.Instance.UnprayedScroll();
+                GameState.Instance.UnpolishedStatue();
             }
         }
      }

@@ -2329,7 +2329,7 @@ Transform:
   m_Children:
   - {fileID: 2091955283}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
 --- !u!1 &506409807
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,11 +3041,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 157938, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
       propertyPath: m_Name
       value: PrayerScroll (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458284, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: prayerText
+      value: Without Tehlu, the world shall fall.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
@@ -3153,7 +3157,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11458284, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
       propertyPath: prayerText
-      value: Praise Tehlu for he is good.
+      value: Tehlu gives us all, and shall give us peace.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
@@ -4956,6 +4960,10 @@ Prefab:
     - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458284, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: prayerText
+      value: Praise Tehlu, for he is good.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
