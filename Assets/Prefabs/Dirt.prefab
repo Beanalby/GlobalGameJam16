@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: Sweep Floor
-  requiredEquipment: {fileID: 0}
+  requiredEquipment: {fileID: 168140, guid: cf9ae08fc311ce544bf4bad6f2786198, type: 2}
 --- !u!212 &21253582
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -164,7 +164,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: requiredEquipment
+      value: 
+      objectReference: {fileID: 168140, guid: cf9ae08fc311ce544bf4bad6f2786198, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112576}

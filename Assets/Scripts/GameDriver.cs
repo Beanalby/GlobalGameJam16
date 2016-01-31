@@ -25,6 +25,9 @@ namespace GlobalGameJam16 {
             _instance = this;
         }
 
+        private void SpawnDirt() {
+            
+        }
 
         public void OnTextEntryStart() {
             canControl = false;

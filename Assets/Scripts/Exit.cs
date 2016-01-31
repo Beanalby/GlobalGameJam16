@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class Exit : MonoBehaviour {
-    public void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("+++ exiing");
+namespace GlobalGameJam16 {
+    public class Exit: MonoBehaviour {
+        public void OnTriggerEnter2D(Collider2D other) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

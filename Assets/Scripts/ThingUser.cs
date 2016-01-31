@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace GlobalGameJam16 {
     public class ThingUser: MonoBehaviour {
-        private GameObject equipment = null;
+        private Equipment equipment = null;
 
         private UsableThing thing = null;
 
@@ -18,7 +18,7 @@ namespace GlobalGameJam16 {
 
         public void Update() {
             if (GameDriver.Instance.CanControl) {
-                if (Input.GetButtonDown("Jump")) {
+                if (Input.GetButtonDown("Jump") && thing != null) {
                     thing.SendMessage("UseThing", this);
                 }
             }
@@ -26,8 +26,10 @@ namespace GlobalGameJam16 {
 
         public void SetUsableThing(UsableThing newThing) {
             // check if the usable thing requires equipment
-            if (newThing.requiredEquipment != null && newThing.requiredEquipment != equipment) {
-                return;
+            if (newThing.requiredEquipment != null) {
+                if (equipment == null || (newThing.requiredEquipment != equipment && newThing.requiredEquipment != equipment.eqPrefab)) {
+                    return;
+                }
             }
             thing = newThing;
             thingDescLabel.text = thing.description;
@@ -40,7 +42,11 @@ namespace GlobalGameJam16 {
         }
 
         public void AddEquipment(GameObject newEq) {
-            equipment = newEq;
+            equipment = newEq.GetComponent<Equipment>();
+            if (equipment == null) {
+                Debug.LogError("!!! No equipment on equipped " + newEq.name);
+                Debug.Break();
+            }
             equipment.GetComponentInChildren<SpriteRenderer>().sortingOrder = 10;
             equipment.transform.parent = transform;
             equipment.transform.localPosition = new Vector3(0.29f, -.07f, 0);
