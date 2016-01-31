@@ -4,6 +4,8 @@ using System.Collections;
 
 namespace GlobalGameJam16 {
     public class EndDay: MonoBehaviour {
+        public GameObject tehlu, devil;
+
         public Text endLabel;
         public Image badImage;
         private float threshold = .6f;
@@ -24,9 +26,13 @@ namespace GlobalGameJam16 {
                 labelText += "Ignoring Tehlu's statues has tarnished his image.\n\n";
             }
             if (prayFailed || dirtFailed || statueFailed) {
+                devil.SetActive(true);
+                tehlu.SetActive(false);
                 labelText += "The world falls into ruins.";
                 badImage.gameObject.SetActive(true);
             } else {
+                devil.SetActive(false);
+                tehlu.SetActive(true);
                 labelText += "Your dilligence has delivered salvation to the world.";
             }
             endLabel.text = labelText;
