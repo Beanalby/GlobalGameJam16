@@ -6,12 +6,12 @@ namespace GlobalGameJam16 {
     public class EndDay: MonoBehaviour {
         public Text endLabel;
         public Image badImage;
-        private float threshold = .666f;
+        private float threshold = .6f;
 
         public void Start() {
             GameState state = GameState.Instance;
-            bool dirtFailed = (state.NumDirtSucceeded / (state.NumDirtFailed + state.NumDirtSucceeded)) < threshold;
-            bool prayFailed = (state.NumPraySucceeded / (state.NumPrayFailed + state.NumPraySucceeded)) < threshold;
+            bool dirtFailed = ((float)state.NumDirtSucceeded / (state.NumDirtFailed + state.NumDirtSucceeded)) < threshold;
+            bool prayFailed = ((float)state.NumPraySucceeded / (state.NumPrayFailed + state.NumPraySucceeded)) < threshold;
 
             string labelText = "";
             if (dirtFailed) {

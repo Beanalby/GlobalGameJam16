@@ -16,9 +16,10 @@ namespace GlobalGameJam16 {
             }
         }
 
-        public GameObject dirtPrefab;
+        public GameObject dirtPrefab, fadeOutPrefab;
 
-        private int endDay = 2, currentDay = 1;
+        private int endDay = 3, currentDay = 1;
+        public int CurrentDay { get { return currentDay; } }
 
         private int numNewDirt = 3, numDirtFailed=0, numDirtSucceeded, numPrayFailed=0, numPraySucceeded=0;
         private Rect dirtRange = new Rect(-.5f, -2f, 12f, 2.5f);
@@ -99,6 +100,9 @@ namespace GlobalGameJam16 {
         }
 
         public void AdvanceDay() {
+            Instantiate(fadeOutPrefab);
+        }
+        public void FadeOutFinished() {
             ++currentDay;
             if (currentDay == endDay) {
                 SceneManager.LoadScene("EndDay");
