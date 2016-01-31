@@ -8,6 +8,9 @@ namespace GlobalGameJam16 {
         public Text goalLabel;
         public string goalText;
 
+        [HideInInspector]
+        public PrayerScroll scroll;
+
         public void Start() {
             input.onValueChanged.AddListener(delegate { ValueChanged(); });
             input.onEndEdit.AddListener(delegate { EditCancelled(); });
@@ -31,6 +34,7 @@ namespace GlobalGameJam16 {
             StartCoroutine(_prayerSuccess());
         }
         private IEnumerator _prayerSuccess() {
+            scroll.OnPrayerSuccess();
             input.text = "<color=green><b>" + goalText + "</b></color>";
             input.readOnly = true;
             yield return new WaitForSeconds(1f);

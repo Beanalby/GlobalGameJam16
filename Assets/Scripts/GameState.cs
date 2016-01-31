@@ -17,7 +17,7 @@ namespace GlobalGameJam16 {
 
         public GameObject dirtPrefab;
 
-        private int numNewDirt = 3;
+        private int numNewDirt = 3, numUncleanedDirt=0, numUnprayed=0;
         private Rect dirtRange = new Rect(-.5f, -2f, 12f, 2.5f);
         private HashSet<Vector3> dirtSpots;
 
@@ -38,10 +38,11 @@ namespace GlobalGameJam16 {
         public void OnLevelWasLoaded(int level) {
             // gets called even if we're a duplicate that's going
             // to be destroyed, make sure we're the real one
-            if (_instance == this) {
-                RestoreDirt();
-                SpawnNewDirt();
+            if (_instance != this) {
+                return;
             }
+            RestoreDirt();
+            SpawnNewDirt();
         }
 
         public void AddDirt(Vector3 pos) {
@@ -68,8 +69,13 @@ namespace GlobalGameJam16 {
         }
         private void RestoreDirt() {
             foreach (Vector3 pos in dirtSpots) {
+                ++numUncleanedDirt;
                 SpawnDirt(pos);
             }
+        }
+
+        public void UnprayedScroll() {
+            ++numUnprayed;
         }
     }
 }

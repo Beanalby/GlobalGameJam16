@@ -2646,6 +2646,52 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &699146687
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 157938, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_Name
+      value: PrayerScroll (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &729985612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,6 +2750,52 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &730999841
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 496084, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 157938, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+      propertyPath: m_Name
+      value: PrayerScroll (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e271b08bac8875149bb3f21f3ac59efb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &753901671
 GameObject:
   m_ObjectHideFlags: 0
