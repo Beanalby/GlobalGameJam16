@@ -21,13 +21,17 @@ namespace GlobalGameJam16 {
         private int endDay = 3, currentDay = 1;
         public int CurrentDay { get { return currentDay; } }
 
-        private int numNewDirt = 3, numDirtFailed=0, numDirtSucceeded, numPrayFailed=0, numPraySucceeded=0;
+        private int numNewDirt = 3, numDirtFailed=0, numDirtSucceeded,
+            numPrayFailed=0, numPraySucceeded=0,
+            numStatueFailed=0, numStatueSucceeded=0;
         private Rect dirtRange = new Rect(-.5f, -2f, 12f, 2.5f);
         private HashSet<Vector3> dirtSpots;
         public int NumDirtFailed { get { return numDirtFailed; } }
         public int NumPrayFailed { get { return numPrayFailed; } }
         public int NumDirtSucceeded { get { return numDirtSucceeded; } }
         public int NumPraySucceeded { get { return numPraySucceeded; } }
+        public int NumStatueFailed { get { return numStatueFailed; } }
+        public int NumStatueSucceeded { get { return numStatueSucceeded; } }
 
         public void Awake() {
             if (_instance != null) {
@@ -100,6 +104,12 @@ namespace GlobalGameJam16 {
         }
         public void UnprayedScroll() {
             ++numPrayFailed;
+        }
+        public void PolishedStatue() {
+            ++numStatueSucceeded;
+        }
+        public void UnpolishedStatue() {
+            ++numStatueFailed;
         }
 
         public void AdvanceDay() {

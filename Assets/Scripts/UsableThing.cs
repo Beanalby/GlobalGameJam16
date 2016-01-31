@@ -4,6 +4,7 @@ using System.Collections;
 namespace GlobalGameJam16 {
     public class UsableThing: MonoBehaviour {
         public string description;
+        public bool requireEquipment;
         public GameObject requiredEquipment;
 
         private GameObject user;

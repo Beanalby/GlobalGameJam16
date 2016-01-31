@@ -27,11 +27,20 @@ namespace GlobalGameJam16 {
 
         public void SetUsableThing(UsableThing newThing) {
             // check if the usable thing requires equipment
-            if (newThing.requiredEquipment != null) {
-                if (equipment == null || (newThing.requiredEquipment != equipment && newThing.requiredEquipment != equipment.eqPrefab)) {
-                    return;
+            if (newThing.requireEquipment) {
+                if (newThing.requiredEquipment == null) {
+                    // it requires we DON'T have equipment
+                    if (equipment != null) {
+                        return;
+                    }
+                } else {
+                    // it requires a certain piece of equipment
+                    if (equipment == null || (newThing.requiredEquipment != equipment && newThing.requiredEquipment != equipment.eqPrefab)) {
+                        return;
+                    }
                 }
             }
+            Debug.Log("+++ setting usable for " + newThing.name);
             thing = newThing;
             thingDescLabel.text = thing.description;
             thingDesc.SetActive(true);

@@ -12,7 +12,7 @@ namespace GlobalGameJam16 {
             GameState state = GameState.Instance;
             bool dirtFailed = ((float)state.NumDirtSucceeded / (state.NumDirtFailed + state.NumDirtSucceeded)) < threshold;
             bool prayFailed = ((float)state.NumPraySucceeded / (state.NumPrayFailed + state.NumPraySucceeded)) < threshold;
-
+            bool statueFailed = ((float)state.NumStatueSucceeded / (state.NumStatueFailed + state.NumStatueSucceeded)) < threshold;
             string labelText = "";
             if (dirtFailed) {
                 labelText += "Your negligence in cleaning the temple has made Tehlu angry.\n\n";
@@ -20,7 +20,10 @@ namespace GlobalGameJam16 {
             if (prayFailed) {
                 labelText += "Skipping your prayers has left Tehlu weak and abandoned.\n\n";
             }
-            if (prayFailed || dirtFailed) {
+            if (statueFailed) {
+                labelText += "Ignoring Tehlu's statues has tarnished his image.\n\n";
+            }
+            if (prayFailed || dirtFailed || statueFailed) {
                 labelText += "The world falls into ruins.";
                 badImage.gameObject.SetActive(true);
             } else {
